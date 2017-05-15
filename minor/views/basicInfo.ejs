@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+<head>
+   <title>Basic Info| Project Manager</title>
+    <link href="/assets/signup.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>      
+</head>
+<body class="body1">
+
+      <div class="box effect5" style="margin-left:25%">
+        <h4 style="color:#3399ff">Project MANAGER</h4>
+        <h3>Hi <%= data.name %></h3>
+          <% if(photo != null){ %>
+    <img class="img-circle" src="/assets/uploads/<%= photo.myfile %>" style="width:50px;height:50px;float:left">
+    <h5 style="float:left;padding-left:20px"><%= data.Enrollment %></h5>
+    <% }else{ %>
+       <img class="img-circle" src="/assets/images/download.jpg" style="width:50px;height:50px">
+       <h5 style="float:left;padding-left:20px"><%= data.Enrollment %></h5>
+    <% } %>
+        <br clear="all">
+       
+        <% if(errors.length>0){ %>
+<div  id="myAlert"  class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+      <br>
+
+    <form method="POST" action="/basicInfo">
+      <label>Enter your full name</label>
+      <input type="text" name="name" placeholder="Full Name" required /> 
+      <label>Enter your email address</label>
+      <input type="email" name="email" placeholder="example@gmail.com" required /> 
+      <label>Enter your Github link</label>
+      <input type="text" name="github" />
+      <label>Enter your facebook link</label>
+      <input type="text" name="facebook" />
+      <label>Enter your mobile no.</label> 
+      <input type="text" name="mob" placeholder="+91" required />
+      <hr>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+    <br><br>
+    <center>
+    <p>© 2017 project Manager <a href="#"><b>Privacy Policy</b></a></p>
+  </center>
+
+      </div>
+
+
+
+        <script>
+$(document).ready(function(){
+          setTimeout(function(){
+   $('#myAlert').hide('fade');
+  }, 2000);
+
+});
+</script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,201 @@
+.projectDetails{
+	width:100%;
+	height:auto;
+	padding:10px 10px;
+	border:1px solid  #f5f5ef;
+}
+.projectDetails span{ color:grey; }
+.photoBox{
+	box-shadow: 0 15px 10px #777;
+	width:300px;
+	height:250px;
+	margin: 10px 20px;
+	padding:10px 20px;
+	color:#3399ff;
+}
+.photoBox .img-circle{
+	width:150px;
+	height:150px
+}
+.projectDetails{
+	margin: 10px 20px;
+}
+.projectDetails h1{ color: skyblue;}
+
+.summary{
+  width:100%;
+  min-height:200px;
+  background-color: #ffffe6;
+}
+
+.projectReview{
+	width:100%;
+	height:600px;
+	padding:10px 20px;
+	border:1px solid  #f5f5ef;
+}
+.VA{ color:#3399ff; cursor:pointer;}
+.projectReview1{
+	width:50%;
+	height:45px;
+	padding:12px 20px;
+	background-color:#f5f5f0;
+	font-weight: bold;
+}
+.projectReview2{
+	overflow:hidden; 
+}
+
+
+.avgrund-popup {
+	position: absolute;
+    width: 340px;
+	height: 180px;
+	left: 70%;
+	top: 30%;
+	#margin: -130px 0 0 -190px;
+	#visibility: hidden;
+	display:none;
+	#opacity: 0;
+	z-index: 2;
+	padding: 20px;
+ 
+    background-color: #eee;
+    color: #222;
+	box-shadow: 0px 0px 20px rgba( 0, 0, 0, 0.6 );
+	border-radius: 3px;
+
+	-webkit-transform: scale( 0.8 );
+	   -moz-transform: scale( 0.8 );
+	    -ms-transform: scale( 0.8 );
+	     -o-transform: scale( 0.8 );
+	        transform: scale( 0.8 );
+}
+
+ .avgrund-popup p {
+    margin-top: 27px;
+    margin-bottom: 25px;
+  font-family:;
+  font-weight: bold;
+     }
+     
+.avgrund-popup button {
+    padding: 12px 20px;
+    width: 30%;
+    margin: 0 5px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background 0.15s ease;
+            transition: background 0.15s ease; }
+  .avgrund-popup button:focus {
+    outline: 0; }
+
+.yes { background-color:#2196F3; color:#fff; }
+.yes:hover { background-color: #51adf6; }
+
+.no {
+     color: #2196F3;
+    padding: 12px 20px;
+    width: 30%;
+    margin: 0 5px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background 0.15s ease;
+            transition: background 0.15s ease;  
+ }
+.no:hover { 
+	text-decoration: none;
+	background-color: #ddd;
+	 outline: 0;
+	 }
+   
+  .avgrund-contents .fa-trash{ cursor:pointer; }
+
+.face:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+.social-links{
+  width:100%;
+  height:50px;
+ }
+.social-links a{color:white;}
+ .social-links a:hover{color:white;}
+  .social-git{
+  width:50px;
+  height:50px;
+  background-color:#0d1521;
+  float:left;
+  padding:12px 12px;
+ }
+  .social-fb{
+  width:50px;
+  height:50px;
+  background-color:#004d99;
+    float: left;
+    padding:12px 15px;
+    margin-left:50px;
+ }
+
+ .fa-github:hover{
+  animation:fg 1s 1;
+ }
+ .fa-facebook:hover{
+  animation:fg 1s 1;
+ }
+ @keyframes fg {
+    from {-webkit-transform: rotate(0deg); }
+    to {-webkit-transform: rotate(360deg); }
+}
+
+.book-box{
+  width:100%;
+  height:150px;
+   padding:10px 20px;
+   border:1px solid  #f5f5ef;
+}
+.book-image{
+  width:20%;
+  height: 100px;
+  float:left;
+   padding:10px 20px;
+}
+.book-name{
+  width:80%;
+  height: 100px;
+  float:left;
+   padding:30px 10px;
+   text-decoration: underline;
+}

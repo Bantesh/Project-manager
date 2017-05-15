@@ -1,0 +1,219 @@
+<!Doctype html>
+<html>
+<head>
+   <title>Add Project</title>
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+  <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+  <!--  <script src="/assets/bootstrap.min.js"></script> -->
+    <script src="/assets/custom.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $("#<%= qs.projectType %>").css("display", "none");
+      });
+
+        $(document).ready(function(){
+       $(".open").click(function(){
+       $('.pop-outer').fadeIn('slow');
+       });
+       $(".close").click(function(){
+       $('.pop-outer').fadeOut('slow');
+      });
+     });
+
+
+    $(window).load(function (){
+    $('#mool').css('display','block');
+    });
+
+   setTimeout(function(){
+   $('#myAlert').hide('fade');
+  }, 2000);
+  </script> 
+</head>
+<body>
+
+     <% include partials/minor_header.ejs %> 
+      
+    <div class="addProject"><center>
+    <button id="addProject" class="btn btn-primary btn-sm" data-target="#loginModal" data-toggle="modal">Add Project</button>
+    </center></div>
+
+ <div class="modal fade" data-keyboard="false" data-backdrop="static" id="loginModal" tabindex="-1">
+ <div class="modal-dialog modal-sm">
+ <div class="modal-content">
+ <div class="modal-header">
+ <button class="close" data-dismiss="modal">&times;</button>
+ <h4 class="modal-title">Select Project Type</h4>
+ </div>
+ <div class="modal-body">
+  <form method="get" action="/add-project">
+  <div class="form-group">
+  <input type="radio" name="projectType" value="major" checked> Major<br>
+  <input type="radio" name="projectType" value="minor"> Minor<br>
+  <input type="radio" name="projectType" value="mini"> Mini
+  </div>
+ <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+     
+    <!-- <p id="<%= qs.projectType %>">You contacted <%= qs.projectType %> </p> -->
+
+
+
+
+      <% if(qs.projectType=='major'){ %>
+      
+      <div id="mool" class="pop-outer" style="display:none;z-index:1">
+       <div class="pop-inner">
+        <div>
+        <div class="well well-sm"><b>Add <%= qs.projectType %> Project</b><button class="close">X</button></div>
+        <div class="innerMain">
+          <form method="post" enctype="multipart/form-data" action="/add-project">
+            <label>Project type</label>
+            <input type="radio" name="pType" value="major" checked> Major <br/><br/>
+              <label>Project Id</label>
+            <input type="text" name="pId" class="form-control" required><br/>
+              <label>Technique Used</label>
+            <select name="tech" class="form-control">
+            <option selected>Java</option>  <option>C</option>  <option>C++</option>
+            <option>Node js</option>  <option>Python</option>  <option>Php</option>  <option>Flask</option>
+            </select> <br>
+            <label>Database/ API Used</label>
+            <input type="text" name="dbUsed" class="form-control" /> <br/>
+            <label>Project title</label>
+            <input type="text" name="projectTitle" class="form-control" required /> <br/>
+            <label>Suggest a book to read</label>
+            <input type="text" name="book" class="form-control" /> <br/>
+            <label>Attach file</label>
+              <i class="fa fa-paperclip fa-2x attach-file">
+              <input type="file" name="attactFile" class="form-control" required/> 
+              </i> <br><br>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Add</button>
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+
+
+      <% } else if(qs.projectType == 'minor'){ %>
+
+
+       <div id="mool" class="pop-outer" style="display:none;z-index:1">
+       <div class="pop-inner">
+        <div>
+        <div class="well well-sm"><b>Add <%= qs.projectType %> Project</b><button class="close">X</button></div>
+        <div class="innerMain">
+          <form method="post" enctype="multipart/form-data" action="/add-project">
+            <label>Project type</label>
+            <input type="radio" name="pType" value="minor" checked> Minor <br/><br/>
+             <label>Project Id</label>
+            <input type="text" name="pId" class="form-control" required><br/>
+            <label>Technique Used</label>
+            <select name="tech" class="form-control">
+            <option selected>Java</option>  <option>C</option>  <option>C++</option>
+            <option>Node js</option>  <option>Python</option>  <option>Php</option>  <option>Flask</option>
+            </select> <br>
+            <label>Database/ API Used</label>
+            <input type="text" name="dbUsed" class="form-control" /> <br/>
+            <label>Project title</label>
+            <input type="text" name="projectTitle" class="form-control" required/> <br/>
+            <label>Suggest a book to read</label>
+            <input type="text" name="book" class="form-control" /> <br/>
+            <label>Attach file</label>
+             <i class="fa fa-paperclip fa-2x attach-file">
+              <input type="file" name="attactFile" class="form-control" required/> 
+              </i> <br><br>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Add</button>
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+
+      <% } else if(qs.projectType == 'mini'){ %>
+     
+       <div id="mool" class="pop-outer" style="display:none;z-index:1">
+       <div class="pop-inner">
+        <div>
+        <div class="well well-sm"><b>Add <%= qs.projectType %> Project</b><button class="close">X</button></div>
+        <div class="innerMain">
+          <form method="post" enctype="multipart/form-data" action="/add-project">
+            <label>Project type</label>
+            <input type="radio" name="pType" value="mini" checked> Mini <br/><br/>
+             <label>Project Id</label>
+            <input type="text" name="pId" class="form-control" required><br/>
+            <label>Technique Used</label>
+              <select name="tech" class="form-control">
+            <option selected>Java</option>  <option>C</option>  <option>C++</option>
+            <option>Node js</option>  <option>Python</option>  <option>Php</option>  <option>Flask</option>
+            </select>
+            <label>Database/ API Used</label>
+            <input type="text" name="dbUsed" class="form-control" /> 
+            <label>Project subject</label>
+            <input type="text" class="form-control" name="projectSubject" required/>
+            <label>Project title</label>
+            <input type="text" class="form-control" name="projectTitle" required/>
+            <label>Suggest a book to read</label>
+            <input type="text" name="book" class="form-control" /> <br/> 
+            <label>Attach file</label>
+             <i class="fa fa-paperclip fa-2x attach-file">
+              <input type="file" name="attactFile" class="form-control" required/> 
+              </i> <br><br>
+            <button type="submit" class="btn btn-primary"><i class="fa fa-plus fa-fw"></i>Add</button>
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+
+
+      <% }
+      %>
+     <% if(errors.length>0){ %>
+<div id="myAlert" class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+
+<div class="ptt">
+<div class="containor">
+<div class="row">
+  <% for(var i=0; i<projects.length; i++){ %>
+  <div  class="col-lg-2 col-md-2 col-sm-4 col-xs-6" align="center" style="margin-top:30px;">
+    <div class="drive">
+    <a id="driveA" href="/project1?id=<%= projects[i].pId %>"> 
+    <img src="/assets/images/folder.png" style="width:80%" /> <br>
+    <%= projects[i].pType %>
+    </a> 
+    </div>
+   <b id="show"><%= projects[i].projectTitle %></b> <br>
+
+  </div>
+
+      <% } %>
+ 
+</div>
+</div>
+</div>
+<br><br>
+  
+
+
+<% include partials/minor_footer.ejs %>
+
+</body>
+</html>

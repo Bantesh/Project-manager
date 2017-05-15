@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager | Networks</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/userProfile.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+
+   <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>    
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+
+         <div class="dtSearch" style="height:50px;padding-top:10px;font-size:20px"> 
+          <center><p><a href="/profile">Profile</a> / <a href="networks">My networks</a></p></center> 
+         </div>
+
+     <% if(errors.length>0){ %>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+
+ 
+ <div class="container">
+  <div class="row">
+  <div class="col-xs-6">
+  <div class="options network">
+       <% for(var i=0; i<inviteUsers.length; i++){ if(inviteUsers[i].response == 'accept'){ %>
+         <p>You added by <a href="/otherUser?Enrollment=<%= inviteUsers[i].fromUser %>"><%= inviteUsers[i].fromUser %></a>
+         for the project <a href="/project2?id=<%= inviteUsers[i].rId %>"><%= inviteUsers[i].rId %></a></p></p>
+         <hr>
+      <% } } %>
+  </div>
+</div>
+ <div class="col-xs-6">
+  <div class="options-view1 network1">
+    <% for(var i=0; i<inviteUsers.length; i++){ if(inviteUsers[i].response == ''){ %>
+         <p><a href="/otherUser?Enrollment=<%= inviteUsers[i].fromUser %>"><%= inviteUsers[i].fromUser %></a> 
+          wants to add you for the project 
+          <a href="/project2?id=<%= inviteUsers[i].rId %>"><%= inviteUsers[i].rId %></a></p>
+         <form method="post" action="/networks">
+          <input type="text" name="fromUser" value="<%= inviteUsers[i].fromUser %>" style="display:none">
+          <input type="text" name="rId" value="<%= inviteUsers[i].rId %>" style="display:none">
+           <input type="radio" name="response" value="accept" checked> Accept
+           <input type="radio" name="response" value="delete"> Delete
+         <button class="btn btn-primary">Send</button>
+         </form>
+         <hr>
+      <% } } %>
+  </div>
+</div>
+</div>
+</div>
+
+<br><br>
+
+
+
+<% include partials/minor_footer.ejs %>
+
+</body>
+</html>

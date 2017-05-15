@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+<head>
+	<title>
+         <%= otherUser.Enrollment %>
+  </title>
+<link href="/assets/project.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+
+    
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>
+</head>
+<body>
+
+     <% include partials/minor_header.ejs %> 
+  <br><br>
+  <div class="container-fluid" style="margin-top:70px">
+  <div class="row">
+    <div class="col-lg-4">
+   <div class="photoBox">
+    <% if(photo != null){ %>
+    <img class="img-circle" src="/assets/uploads/<%= photo.myfile %>">
+    <% }else{ %>
+       <img class="img-circle" src="/assets/images/download.jpg">
+    <% } %>
+    <h4><%= otherUser.name %></h4>
+    </div>
+    </div>
+    <div class="col-lg-8">
+    <div class="projectDetails">
+      <h1><%= otherUser.name %>'s Profile</h1>
+       <h4>Name: <%= otherUser.name %></h4>
+        <h4>Enrollment: <%= qs.Enrollment %> </h4>
+        <h4>Date of Birth: <%= otherUser.DOB %></h4>
+         <h4>Email: <%= otherUser.email %></h4>
+          <h4>Mobile No.: <%= otherUser.mob %></h4>
+
+                <div class="social-links">
+      <% if(otherUser.github != ''){ %>
+      <div class="social-git img-circle">
+        <a href="<%=otherUser.github%>" target="blank"><i class="fa fa-github fa-2x"></i></a>
+      </div>
+      <% } %>
+      <% if(otherUser.facebook != ''){ %>
+      <div class="social-fb img-circle">
+        <a href="<%=otherUser.facebook%>" target="blank"><i class="fa fa-facebook fa-2x"></i></a>
+      </div>
+      <% } %>
+      <br clear="all" />
+    </div>
+   </div>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>

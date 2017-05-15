@@ -1,0 +1,112 @@
+.pop-outer{
+background-color: rgba(0,0,0,0.5);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+.pop-inner{
+background-color:#fff;
+width:700px;
+height:620px;
+#padding:25px;
+margin: 5% auto;
+}
+
+.innerMain{
+	padding: 10px;
+}
+
+
+.drive{
+	overflow: hidden;
+	width:50%;
+	#height:115px;
+	height:105px;
+	background:white;
+    #padding-top:10px;
+	border-radius:5px;
+	 margin:8px;
+	  box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+#driveA{ text-decoration: none;}
+
+.drive:hover{
+	 #margin:0px;
+    box-shadow: 6px 6px 4px 4px rgba(0,0,0,0.3);
+}
+
+.drive_name{
+	width:99%;
+	height:40px;
+	background: #f5f5f0;
+	padding-top:10px;
+}
+
+.addProject{
+	width: 100%;
+	height:100px;
+  padding: 2.25em 1.6875em;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+  margin-top:70px;
+}
+#addProject{
+	font-size:16px; font-weight:bold;
+}
+.ptt{
+	width: 90%;
+	min-height: 338px;
+}
+
+
+
+
+ .attach-file {
+  margin-left: 20px;
+  color:#009933;
+}
+.attach-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+.fixed-sot{
+  width:250px; height:50px;
+  position:fixed;
+  left:-210px; top:130px;
+   background-color: lighten(#0074d9, 20);
+   background-color:rgba(0,0,0,0.2);
+   padding: 8px 10px;
+   transition: all 2s;
+}
+.fixed-sot i{
+  padding-left: 10px;
+  color:#009933;
+}
+.fixed-sot:hover{
+  position:fixed;
+  left:-0px; top:130px;
+}

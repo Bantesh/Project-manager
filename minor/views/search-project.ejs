@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">       
+</head>
+<body>
+         <div class="head1">
+    <br />
+    <div class="head11">
+  <form method="get" action="/results">
+    <div class="input-group">
+    <input class="form-control search" type="text" name="search_query" required />
+    <span class="input-group-btn">
+    <button type="submit" class="btn btn-success"><i class="fa fa-search fa-fw"></i></button> 
+    </span>
+    </div>
+  </form>
+    </div>
+
+    <img class="Logo" src="/assets/images/1335026.png"> <span class="Logo-name">project<span style="color:white"> MANAGER
+    </span></span>
+
+  <nav class="navbar navbar-default">  
+    <div class="navbar-collapse collapse">  <!--<div class="navbar-collapse collapse"> -->
+     <ul class="nav navbar-nav navbar-right" id="Nav">
+      <li><a href="/">HOME</a></li>
+      <li><a href="signin">LOGIN</a></li>
+      <li><a href="signup">SIGNUP</a></li>
+      <li><a href="add-project"><i class="fa fa-plus fa-fw"></i>ADD</a></li>
+      <li><a href="#">HELP</a></li>
+     </ul>
+    </div>
+  </nav>
+
+  <br clear="all" />
+
+  </div>
+
+   <br /><br />
+
+   <p>You search for <%= qs.search_query %> </p>
+    
+
+    
+<% include partials/minor_footer.ejs %>
+ 
+</body>
+</html>

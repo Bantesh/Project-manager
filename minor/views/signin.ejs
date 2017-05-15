@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+      <title>Signin | Project Manager</title>
+     <link href="/assets/signup.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">    
+</head>
+<body class="body1">
+
+      
+    <a href="/"><img src="/assets/images/logo.png"></a>
+   
+    <div class="box effect5" style="height:410px">
+        <h2>Sign In</h2>
+        <p>Don't have a Code School account? <b><a href="/signup">Create a free account</a></b></p>
+       <% if(errors.length>0){ %>
+        <p style="color:#800000"> <%= errors %> </p>
+      <% } %>
+
+     <form method="POST" action="/signin">
+      <label>Email</babel>
+      <input type="email" name="email" placeholder="example@gmail.com" required />
+       <label>Password</label>
+      <input type="password" name="password" placeholder="*******" required />
+      <p><a href="#"><i class="fa fa-question-circle fa-fw"></i>Forgot your password?</a></p> <hr>
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+    <br><br>
+    <center>
+    <p>© 2017 project Manager <a href="#"><b>Privacy Policy</b></a></p>
+  </center>
+      </div>
+
+
+ 
+</body>
+</html>

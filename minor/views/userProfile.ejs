@@ -1,0 +1,159 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager | profile</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/userProfile.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+   <script src="/assets/jquery.min.js"></script>  
+  <!-- <script src="/assets/bootstrap.min.js"></script> -->
+    <script src="/assets/custom.js"></script>    
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+
+         <div class="dtSearch">  <center>
+      <button id="addProject" class="btn btn-primary btn-sm" data-target="#loginModal" data-toggle="modal">ADD GROUP MEMBER</button>
+    </center></div>
+
+     <% if(errors.length>0){ %>
+<div  id="myAlert"  class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+
+  <div class="up1">
+
+   <div class="modal fade" data-keyboard="false" data-backdrop="static" id="loginModal" tabindex="-1">
+ <div class="modal-dialog modal-lg">
+ <div class="modal-content">
+ <div class="modal-header">
+ <button class="close" data-dismiss="modal">&times;</button>
+ <h4 class="modal-title">Invite group member</h4>
+ </div>
+ <div class="modal-body">
+  <form method="post" action="/profile">
+  <input class="form-control" type="text" name="fromUser" value="<%= data.Enrollment %>" style="display:none"><br>
+  <input class="form-control" type="text" name="toUser" placeholder="Enrollment" required><br>
+   <select class="form-control"  name="rId">
+   <option selected>Project Id for reference</option>
+   <% for(var i=0; i<addedBy.length; i++){ %>
+   <option><%= addedBy[i].pId %></option>
+    <% } %>
+   </select> <br>
+  <input class="form-control" type="text" name="response" value="" style="display:none"><br>
+ <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+
+  </div>
+ 
+ <div class="container">
+  <div class="row">
+  <div class="col-xs-2">
+  <div class="options" style="box-shadow: 0 15px 10px #777;">
+    <div class="image-change">
+   <!-- <img class="img-circle" src="/assets/images/6003aa0bd322ace03022108000a63cde.png"> -->
+      <% if(photo != null){ %>
+    <img class="img-circle" src="/assets/uploads/<%= photo.myfile %>" style="width:150px;height:150px">
+    <% }else{ %>
+       <img class="img-circle" src="/assets/images/download.jpg" style="width:150px;height:150px">
+    <% } %>
+    <i class="fa fa-camera fa-2x btn-file">
+      <form method="post"  enctype="multipart/form-data" action="/dp">
+      <input type="text" name="Enrollment" value="<%= data.Enrollment %>" style="display:none">
+      <input type="file" name="myfile" required  onchange='this.form.submit();'>
+    </form>
+    </i>
+    </div>
+    <h5 id="pi"><b>Personal Info</b></h5>
+    <h5 id="ep"><b>Change Password</b></h5>
+  <!--<h5 id="cp"><b>My sort list</b></h5> -->
+    <h5><a href="/mysortList"><b>My sort list</b></a></h5>
+    <h5><a href="/basicInfo"><b>Edit Profile</b></a></h5>
+    <h5><a href="/networks"><b>My Networks</b></a></h5>
+  </div>
+</div>
+ <div class="col-xs-10">
+  <div class="options-view1">
+    <h5><span>Name:</span> <%= data.name %></h5>
+    <h5><span>Enrollment:</span> <%= data.Enrollment %></h5>
+    <h5><span>Date of Birth:</span> <%= data.DOB %></h5>
+    <h5><span>Email:</span> <%= data.email %></h5>
+    <h5><span>Mobile No.:</span> <%= data.mob %></h5>
+    <div class="social-links">
+      <% if(data.github != ''){ %>
+      <div class="social-git img-circle"><a href="<%=data.github%>"><i class="fa fa-github fa-2x"></i></a></div>
+      <% } %>
+       <% if(data.facebook != ''){ %>
+      <div class="social-fb img-circle"><a href="<%=data.facebook%>"><i class="fa fa-facebook fa-2x"></i></a></div>
+      <% } %>
+      <br clear="all" />
+    </div>
+  </div>
+    <div class="options-view2" style="display:none">
+    <h5>CHANGE PASSWORD</h5>
+    <form>
+    <input type="password" class="form-control" placeholder="OLD PASSWORD"> <br>
+    <input type="password" class="form-control" placeholder="NEW PASSWORD"> <br>
+    <input type="password" class="form-control" placeholder="CONFIRM PASSWORD"> <br>
+    <button type="submit" class="btn btn-info">SAVE</button>
+    </form>
+  </div>
+   <div class="options-view3" style="display:none">
+    <h5>PERSONAL INFO</h5>
+    <form>
+    <input type="text" class="form-control" value="<%= data.name %>" placeholder="FULL NAME"> <br>
+    <input type="email" class="form-control" value="<%= data.email %>" placeholder="EMAIL"> <br>
+    <input type="text" class="form-control" value="<%= data.mob %>" placeholder="MOBILE NUMBER"> <br>
+    <button type="submit" class="btn btn-info">UPDATE</button>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+<br><br>
+
+
+<% include partials/minor_footer.ejs %>
+
+ 
+
+
+  <script>
+$(document).ready(function(){
+    $("#pi").click(function(){
+        $(".options-view1").show();
+         $(".options-view2").hide();
+          $(".options-view3").hide();
+    });
+      $("#cp").click(function(){
+        $(".options-view1").hide();
+         $(".options-view2").show();
+          $(".options-view3").hide();
+    });
+        $("#ep").click(function(){
+        $(".options-view1").hide();
+         $(".options-view2").hide();
+          $(".options-view3").show();
+    });
+
+          setTimeout(function(){
+   $('#myAlert').hide('fade');
+  }, 2000);
+
+});
+</script>
+</body>
+</html>

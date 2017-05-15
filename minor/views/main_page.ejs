@@ -1,0 +1,138 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>
+     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>       
+</head>
+<body>
+        <% include partials/minor_header.ejs %> 
+
+          <% if(errors.length>0){ %>
+    <div id="myAlert" class="alert alert-danger alert-dismissable" style="position:fixed">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+      <% } %>
+        
+ <!--<div class="dtSearch">
+ <center>
+     <div id="ssb" class="input-group" style="width:300px;">
+  <input style="font-size:16px" class="form-control" id="searchClick" type="text" placeholder="Serach for a project..." required />
+    <span class="input-group-btn">
+    <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button> 
+    </span>
+    </div>
+</center>
+</div>
+    <center>
+    <div id="sdv" class="input-group" style="width:90%;display:none;">
+   <span class="input-group-addon"><b><i class="fa fa-search fa-fw"></i></b></span>
+  <input  id="search" type="text" name="search_term" placeholder="Serach for a project..." required />
+  <span class="btn btn-danger input-group-addon" id="close"><b>X</b></span>
+    </div>
+  </center>
+
+
+ <div id="searchResults">
+  <div class="containor">
+ <div class="row">
+
+ </div>
+</div>
+ </div> -->
+
+ <script>
+$(document).ready(function(){
+    $("#searchClick").focus(function(){
+        //$(".body-class").fadeOut("slow"); //$(".body-class").css("display", "none").fadeOut("slow");
+        $("#searchResults").fadeIn("slow");
+        $("#ssb").fadeOut("slow");
+        $("#sdv").fadeIn("slow");
+        $("body").css("overflow","hidden");
+        $('#search').focus();
+    });
+
+      $('#close').click(function(){
+        $("#searchResults").fadeOut("slow");
+        $("#ssb").fadeIn("slow");
+        $("#sdv").fadeOut("slow");
+        $("body").css("overflow-y","scroll");
+      });
+
+    setTimeout(function(){
+   $('#myAlert').hide('fade');
+  }, 2000);
+});
+</script>
+
+    <div class="addProject"><center>
+    <div id="addProject" class="btn-primary btn-sm" style="width:200px">Popular Projects</div>
+    </center></div>
+<div class="container">
+<div class="row">
+  <% if(rating != null){
+    for(var i=0; i<rating.length; i++){ %>
+  <div class="col-lg-2">
+    <div class="drive popular">
+    <a id="driveA" href="/project1?id=<%= rating[i]._id.pId %>"> 
+    <img src="/assets/images/folder.png" style="width:80%" /> <br>
+   <p><%= rating[i].total.toFixed(1) %> <i class="fa fa-star" style="color:#ffd633"></i></p>
+    </a> 
+    </div>
+    <b id="show"> <%= rating[i]._id.projectTitle %></b> <br>
+  </div>
+  <% } } %>
+</div>
+</div>
+
+
+<div class="updateProfile">
+
+<link rel="stylesheet" type="text/css" href="/assets/js/ticker1.css">
+<script src="/assets/js/jquery.min.js"></script> 
+<script src="/assets/js/ticker.js"></script>
+
+<div class="user">
+<div class="user_view">
+<div class="tap"><div id="triangle-bottomright"></div><p id="tap1">Popular Projects</p></div>
+</div>
+<div class="user_say">
+  <div style="width:200px;height:40px;background:#39ac73"><p id="tap1">What user's Say</p></div>
+<div class="progress" style="height:1.5px;margin:10px;">
+            <div class="progress-bar" style="background-color:#0099ff;"></div>
+             </div>
+   
+  <div class="ticker-container">
+      <ul> 
+          <% if(feedback != null){
+        for(var i=0; i<feedback.length; i++){ %>
+       <div style="color:grey">
+         <img class="img-circle" src="/assets/images/download.jpg"  style="width:130px;height:130px">
+          <p style="color:#0099ff">
+            <a href="/otherUser?Enrollment=<%= feedback[i].fromEnrollment %>"><%= feedback[i].fromEnrollment %></a>
+            </p>
+          <p style="margin:10px 20px"><i style="font-size:20px"><%= feedback[i].subject %></i> <br> <%= feedback[i].feedback %> </p>
+        </div>
+          <% } } %>
+      </ul>
+    </div>   
+</div>
+</div>  
+
+</div>
+
+
+      
+<% include partials/minor_footer.ejs %>
+ 
+</body>
+</html>

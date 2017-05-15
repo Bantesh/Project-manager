@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Avgrund - A modal UI concept</title>
+
+		<meta name="description" content="A modal concept which aims to give a sense of depth between the page and modal layers">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="viewport" content="width=800, user-scalable=no">
+
+		<link rel="stylesheet" href="css/demo.css">
+		<link rel="stylesheet" href="css/avgrund.css">
+
+		<script>
+			function openDialog() {
+				Avgrund.show( "#default-popup" );
+			}
+			function closeDialog() {
+				Avgrund.hide();
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<aside id="default-popup" class="avgrund-popup">
+			<h2>assignment heading</h2>
+			<p>download</p>
+			<p>view</p>
+			<p>submit</p>
+      <button onclick="javascript:closeDialog();">Close</button>
+		</aside>
+		<article class="avgrund-contents">
+			<h1>assignments</h1>
+			<a onclick="javascript:openDialog();"><u>file name</u></a>
+		</article>
+
+		<script type="text/javascript" src="avgrund.js"></script>
+	</body>
+</html>

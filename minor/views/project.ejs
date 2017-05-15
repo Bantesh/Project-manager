@@ -1,0 +1,203 @@
+<!Doctype html>
+<html>
+<head>
+	<title>
+		
+         <%= projects.projectTitle %>
+    
+  </title>
+  <link rel="stylesheet" href="/assets/css/rating.css">
+<link href="/assets/project.css" rel="stylesheet" type="text/css" />
+     <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>
+</head>
+<body>
+
+     <% include partials/minor_header.ejs %> 
+
+
+    <br clear="all">
+<div class="container" style="margin-top:70px">
+ <div class="row">
+  <div class="col-lg-7">
+
+
+    <div class="projectDetails">
+      <h1><%= projects.projectTitle %></h1>
+
+       <% for(i=0;i<rating.length;i++) { %>
+          <p><%= rating[i].total.toFixed(1) %> <i class="fa fa-star" style="color:#ffd633"></i></p>
+       <% } %>
+
+     <h3>Project Id : <%= qs.id %> </h3>
+
+        <p><span>Project Id:</span> <%= projects.pId %></p>
+        <p><span>Technology Used:</span> <%= projects.tech %></p>
+        <% if(projects.dbUsed != '' && projects.dbUsed != null) {%>
+         <p><span>Database/API Used:</span> <%= projects.dbUsed %></p>
+         <% } %>
+        <p><span>Project type:</span> <%= projects.pType %></p>
+         <% if(projects.projectSubject != null) {%>
+         <p><span>Project Subject:</span> <%= projects.projectSubject %></p>
+         <% } %>
+         <p><span>Project title:</span> <%= projects.projectTitle %></p>
+            <p><span>Download link:<span> 
+          <a href="/assets/uploads/<%= projects.attachFile %>"><img src="/assets/images/pdf.png" style="width:5%" /></a>
+         </p>
+         <p> <span style="text-decoration:underline"><b>Added by:</b> </span>   
+            <% if(projects.addedBy== data.Enrollment){ %> 
+             <a href="/profile"> you </a>
+            <% }else{ %>
+             <a href="/otherUser?Enrollment=<%= projects.addedBy %>"><%= projects.addedBy %></a>
+            <% } %>
+              </p>
+        <p> <span style="text-decoration:underline"><b>Group members:</b> </span></p>
+            <% for(i=0;i<group.length;i++) { 
+                if(projects.pId == group[i].rId){
+                if(group[i].toUser  == data.Enrollment){ %>
+                  <a href="/profile">You</a> &
+                <% }else{ %>
+             <a href="/otherUser?Enrollment=<%= group[i].toUser %>"><%= group[i].toUser %></a> ,
+            <% } } }%>
+
+        <br><br>
+
+       <div class="summary">
+        <h4><a href="/assets/textFile/<%= projects.attachFile %>.txt">Project description</a></h4>
+        <p><%=  summary %></p>
+      </div>
+
+
+         <% if(projects.addedBy == data.Enrollment){ %> 
+ 
+
+        <!--   <a onclick="myFunction()"><i class="fa fa-trash fa-2x face"></i></a> -->
+
+        <div id="default-popup" class="avgrund-popup">
+        <p>Are you sure you want to do that?</p>
+       <form method="post" action="/delete-project">
+       <input type="text" name="dId" value=" <%= projects.pId %>" style="display:none" required>
+        <button type="submit" class="yes" style=" background-color:#2196F3">Yes</button>
+       <a class="no">No</a>
+        </form>
+          </div>
+
+         <% } else{ %>
+
+           <form method="post" action="/sort-list">
+            <input type="text" name="slBy" value="<%=data.Enrollment %>" style="display:none" required>
+            <input type="text" name="slId" value="<%=projects.pId %>" style="display:none" required>
+             <input type="text" name="slTitle" value="<%=projects.projectTitle %>" style="display:none" required>
+             <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus fa-2x"></i> Add to Sort List</button>
+          </form>
+         
+
+        <br><form method="post" action="/project-review">
+         <input type="text" name="rvBy" value="<%= data.Enrollment %>" style="display:none" required>
+          <input type="text" name="rvId" value="<%= projects.pId %>" style="display:none" required>
+          <input type="text" name="prv" placeholder="Write your review..." required style="width:80%;height:50px">  
+          <button >Submit</button>
+        </form>
+
+         <% } %> 
+      
+    </div> 
+
+  <% if(projects.book !='' && projects.book !=null){ %>
+  <div class="book-box">
+  <h5>Suggested book to read</h5>
+  <div class="book-image">
+     <img src="/assets/images/Book.png" style="width:80px">
+  </div>
+  <div class="book-name">
+    <%= projects.book %>
+  </div>
+  <br clear="all" />
+  </div>
+ <% } %>
+
+
+<% if(projects.addedBy != data.Enrollment){ %> 
+       <div class="cont" style="margin-top:50px;text-decoration:none">
+  <div class="title">
+    <h4>Project Rating</h4>
+  </div>
+  <div class="stars">
+    <form action="/rating" method="POST">
+  <input type="text" name="Enrollment" value="<%= data.Enrollment%>" style="display:none" required>
+  <input type="text" name="pId" value="<%= projects.pId%>" style="display:none" required>
+  <input type="text" name="projectTitle" value="<%= projects.projectTitle%>" style="display:none" required>
+  <br/>
+      <input class="star star-5" id="star-5" type="radio" name="star" value='5'/>
+      <label class="star star-5" for="star-5"></label>
+      <input class="star star-4" id="star-4" type="radio" name="star" value='4'/>
+      <label class="star star-4" for="star-4"></label>
+      <input class="star star-3" id="star-3" type="radio" name="star" value='3'/>
+      <label class="star star-3" for="star-3"></label>
+      <input class="star star-2" id="star-2" type="radio" name="star" value='2'/>
+      <label class="star star-2" for="star-2"></label>
+      <input class="star star-1" id="star-1" type="radio" name="star" value='1'/>
+      <label class="star star-1" for="star-1"></label>
+    <input type="submit" value="Submit" id="input_submit"><br><br>
+    </form>
+  </div>
+  <p>click the stars</p>
+</div>
+
+     <% } %>
+          
+
+  </div>
+
+  <div class="col-lg-5">
+    <div class="projectReview">
+    <center><div class="projectReview1">Project Review</div> 
+        <p class="VA" onclick="viewAll()" href="">View all</p></center>
+    <div id="va" class="projectReview2">
+    <% for(var i=0; i<review.length; i++){ %>
+     <% if(review[i].rvBy == data.Enrollment){ %>
+      <h5><b>You</b></h5>
+     <% }else{ %>
+    <h5><b><%= review[i].rvBy %></b></h5>
+    <% } %>
+     <p><%= review[i].prv %></p>
+     <hr>
+    <% } %>
+</div>
+    </div>
+  </div>
+
+ </div>
+</div>
+
+<script>
+  function viewAll() {
+  document.getElementById('va').style.overflow = "scroll";
+}
+</script>
+     <script>
+    function myFunction() {
+  document.getElementById('default-popup').style.display = "block";
+}
+    </script>
+
+    <script>
+$(document).ready(function(){
+    $(".no").click(function(){
+        $(".avgrund-popup").hide();
+    });
+    $("#show").click(function(){
+        $("#p").show();
+    });
+});
+</script>
+</body>
+
+</html>

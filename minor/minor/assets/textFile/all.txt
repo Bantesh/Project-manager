@@ -1,0 +1,149 @@
+Vivek Ojha
+vivekojha1996@gmail.com
+
++91 8800831537
+
+Noida, Patna
+
+
+EDUCATION                 Bachelor of Technology (B.Tech), Computer Science (2014 - 2018)
+                          Jaypee Institute of Technology
+                          CGPA : 8.20/10
+
+
+                          XII (Senior Secondary), Science
+                          Year of Completion: 2012
+                          CBSE Board (Kendriya Vidyalaya Kankarbagh Patna)
+                          Percentage : 91.00%
+
+
+                          X (Secondary)
+                          Year of Completion: 2010
+                          CBSE Board (Kendriya Vidyalaya Kankerbagh Patna)
+                          CGPA : 10.00/10
+
+
+
+INTERNSHIPS               Problem Setter
+                          GeeksforGeeks (Virtual)
+                          Sep 2016 - Dec 2016
+
+                          Got   Opportunity     to   provide   Logical     and   algorithmic   problems   to
+                          GeeksforGeeks Organization along with its proper solution.
+
+
+
+POSITIONS OF                 Coordinator at Programming Hub , Jaypee Institute of Information
+                             Technology, Noida 62
+RESPONSIBILITY
+
+
+PROJECTS                  My Drive
+                          Oct 2016 - Dec 2016
+
+                          Provides a virtual storage to the client, where one can keep their
+                          Documents, videos etc in compressed and encrypted form. Languages
+                          used - HTML, CSS , Javascript ,Flask, Sqlite3.
+,                     Seat Allocation board
+                     Feb 2016 - May 2016
+
+                     Allotment of seats in colleges for to the students in accordance to their
+                     marks in board and rank in the competitive exam. It would look for the
+                     college that suits best to the student preference.
+
+                     TGIF ( Thank God It's Football)
+                     Sep 2015 - Dec 2015
+
+                     A football fantasy game where a player bets for the winning team. After
+                     every match depending upon the performance of the player's team, points
+                     are awarded/deducted to/from the player. At the end of the contest, the
+                     player with highest point wins.
+
+                     Object Recongniser
+                     Feb 2017 - Present
+
+                     Using Machine Learning , System is trained to recognize the objects in live
+                     streaming and display its name on screen. Working on conversion of name
+                     of objects from text to speech format.
+
+
+SKILLS               C++ Programming                          C Programming
+                     Advanced                                 Advanced
+
+
+                     Python                                   Data Structures
+                     Beginner                                 Advanced
+
+
+                     Database Management System
+                                                              English Proficiency (Spoken)
+                     (DBMS)
+                                                              Intermediate
+                     Intermediate
+
+
+                     English Proficiency (Written)            Mathematics
+                     Intermediate                             Intermediate
+
+
+
+WORK SAMPLES         Other Portfolio Link:
+                     https://www.stopstalk.com/user/profile/ojha_vivek
+
+
+                     Blog Link:
+                     http://code-drills.com/profile?handles=cf/sp/cc/ojha_vivek
+
+
+
+ADDITIONAL DETAILS
+,Secured First Rank IIT Roorke Zonal Programming competition (Feb'16)
+
+
+
+Secured 2nd rank in IIT roorke zonals Programming contest (Jan '17)
+
+
+
+Secured 2nd rank in ALGOFUZZ , programming contest at Jaypee institute
+of Information Technology 128. (Jan'17)
+
+
+
+Secured 3rd rank in technical fest (programming contest)held at Indira
+Gandhi Delhi Technological University. (2016)
+
+
+
+Codechef Snackdown (Yearly contest) Qualified for 3rd round. (June ,2016)
+
+
+
+Facebook Hacker Cup Qualified for 2nd round. (2017)
+
+
+
+Secured 1st rank at technical fest (Programming contest) at Guru Teg
+Bahadur. (2017)
+
+
+
+Secured World Rank 7 at Qualifier for the technical Fest of LNM Institute
+of Information Technology, Jaipur
+
+
+
+Algorithmic Rating at Hackerrank is 94 (out of 100).
+
+
+
+Grab Silver medal at Week of Code (Hackerrank) in June 2016
+
+
+
+Successfully conducted and managed Technical Fest at Jaypee Institute of
+Information Technology Noida 62
+
+
+
+Declared Expert on Codeforces

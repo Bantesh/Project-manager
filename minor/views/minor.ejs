@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+   <title>Minor List</title>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <form method="POST" action="/">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="date" name="dob"  required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="mob" placeholder="Mobile" required />
+      <input type="text" name="nop" placeholder="No. of Projects" required />
+      <button type="submit">Submit</button>
+    </form>
+    <br>
+    <h1>Hey guys!!</h1> 
+      <ul>
+      <% for(var i=0; i<users.length; i++){ %>
+         <a href="profile?id=<%= users[i].id %>"><li><%= users[i].name %></li></a>
+      <% } %>
+    </ul>
+ 
+</body>
+</html>

@@ -1,0 +1,24 @@
+    <html>
+    <head>
+       <link rel="stylesheet" href="css/avgrund.css">
+   <script type="text/javascript" src="avgrund.js"></script> 
+  <script>
+      function openDialog() {
+        Avgrund.show( "#default-popup" );
+      }
+      function closeDialog() {
+        Avgrund.hide();
+      }
+    </script>
+    </head>
+    <body>
+    <aside id="default-popup" class="avgrund-popup">
+     <p>Are you sure you want to do that?</p>
+      <button class="yes" style=" background-color:#2196F3">Yes</button>
+      <button class="no"  onclick="javascript:closeDialog();">No</button>
+    </aside>
+    <article class="avgrund-contents" >
+    <a onclick="javascript:openDialog()">Delete</a>  
+    </article>
+</body>
+<html>

@@ -1,0 +1,189 @@
+
+#qsi{
+	width:1230px;
+	height:70px;
+	display:none;
+	position:fixed;
+	top:0px;
+   right:70px;
+}
+ #qsi input[type="text"] {
+	padding:10px 10px 10px 120px;
+	width:100%;
+	border:1px solid  #f5f5ef;
+	text-align:left;
+	outline:none;
+	background:rgba(0, 0, 0, 0);
+	font-family: 'Muli', sans-serif;
+	font-size:25px;
+	height:70px;
+}
+.fqs{
+	width:70px;
+	height:70px;
+	background-color:#66ccff;
+	position: fixed;
+	right:0px;
+	top:0px;
+	padding:20px 20px;
+	color:white;
+	cursor:pointer;
+}
+
+.navbar-fixed-top{ background-color: white; }
+
+.head1{
+	width: 100%;
+	height: 82px;
+	height: 70px;
+	background:#0d1521;
+	background-color: white;
+	box-shadow:0px 3px 5px rgba(100, 100, 100, 0.49);
+	padding-top:10px;
+}
+.head11{
+	width:100%;
+	height: 60px;
+}
+.head11 input{
+	background-color:white;
+	width:100px;
+}
+.head11 .input-group{ 
+	width:50%; 
+	margin-left:50%;
+	 }
+
+
+.search{
+    width:100%;
+    padding: 10px;
+    background:#181c22;
+    border: 0;
+    font-size: 15px;
+    color: #989898;
+}
+
+.navbar{
+	background: #0d1521;
+	border: 0px;
+}
+
+#Nav li{
+	border-bottom: 0px;
+	font-weight: bold;
+	#transition: border-bottom 1s;
+}
+
+#Nav li:hover{
+	#border-bottom: 2px solid #29a329;
+}
+#Nav a{color:black}
+#Nav a:hover{color:#00b8e6;}
+
+@keyframes text{from{border-bottom: 0px} to{border-bottom: 5px solid #29a329}}
+
+
+
+ #sdv input[type="text"] {
+	padding:10px 10px 10px 10px;
+	width:100%;
+	border:1px solid  #f5f5ef;
+	text-align:left;
+	outline:none;
+	background:rgba(0, 0, 0, 0);
+	font-family: 'Muli', sans-serif;
+	font-size:16px;
+	#height:50px;
+}
+
+
+#searchResults{
+	width:100%; height:610px; 
+	background-color: rgba(255, 224, 179,0.5); 
+	background-color: rgba(0,0,0,0.5);
+	display:none; 
+	position:fixed;
+	top:70px;
+}
+
+.dtSearch{
+	margin-top:70px;
+	width: 100%;
+	height:100px;
+  padding: 2.25em 1.6875em;
+  background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+  -webkit-background-size: 3px 3px;
+  -moz-background-size: 3px 3px;
+  background-size: 3px 3px;
+}
+
+
+
+#updateProfile{
+	width:100%;
+	height:700px;
+	 background-image: url("images/project-management-850x476.jpg");
+	  background-repeat: no-repeat;
+	 background-attachment: fixed;
+	  background-size: 100% 700px;
+
+}
+.updateProfile{
+	margin-top:80px;
+	width:100%;
+	height:700px;
+
+}
+ul li:hover ul{
+	display:block;
+};
+
+ .user{
+	width:100%;
+	height:400px;
+	margin:100px 0px;
+}
+.user_say{
+	float:left;
+	width:50%;
+	height:500px;
+	margin-left:20px;
+}
+.user_view{
+	float:left;
+	width:45%;
+	height:400px;
+	margin-left:25px;
+	margin-top:15px;
+	background: #f2f2f2;
+}
+
+.tap{
+	width:200px;
+	height:40px;
+	margin-left:12px;
+	margin-top: -15px;
+	background:#39ac73;
+}
+#triangle-bottomright {
+	width: 0;
+	height: 0;
+	border-bottom: 15px solid  #133926;
+	border-left: 12px solid transparent;
+	position:relative;
+	left:-12px;
+}
+#tap1{
+	color:white;
+	padding-left:20px;
+	font-size:20px;
+}
+
+.popular{
+	padding-left: 10px;
+}
+

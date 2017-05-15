@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+.div1{
+  width:50%;
+  height:200px;
+  background: yellow;
+  margin:10% 2%;
+  box-shadow: 3px 3px 5px #ccccb3;
+}
+.div2{
+  width:50%;
+  height:100px;
+  background: silver;
+  margin:2%;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $(".div2").hide();
+    });
+    $("#show").click(function(){
+        $(".div2").show(500);
+    });
+
+     $('#BtnPopover').popover();
+});
+</script>
+</head>
+<body>
+<span class="btn btn-primary btn-file">
+    Browse<input type="file">
+</span>
+
+<div class="div1">
+<div class="div2" style="display:none">
+<button id="hide">click</button>
+</div>
+<button id="show">click</button>
+</div>
+
+ <button class="btn btn-primary" id="BtnPopover" title="Popover Title" data-content="Popover content, Popover content, Popover content" data-toggle="popover" data-trigger="focus">
+  Button Popover
+  </button>
+
+
+</body>
+</html>

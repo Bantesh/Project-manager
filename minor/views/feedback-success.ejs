@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>     
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+  <div class="fbsBackground">
+  <div class="fbs">
+    <h3>Hey! <a href="/profile"><%= data.Enrollment %></a> your feedback form is submited successfully!!</h3>
+    <h4>We hope your feedback will definetly help our community to devlope this application more useful and user friendly. </h4>
+    <h3>Thank you! for your support.</h3>
+    <a href="/"> << Go to home</a>
+    
+  </div>
+  <div>
+
+<% include partials/minor_footer.ejs %>
+
+ 
+</body>
+</html>

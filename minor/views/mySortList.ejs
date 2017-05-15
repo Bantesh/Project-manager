@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager | profile</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" />  
+     <link href="/assets/mySortList.css" rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+
+         <div class="dtSearch">  <center>
+         <%if(slp.length == 0){ %>
+         <h4 style="color:#0099ff">Your sort list is empty!</h4>
+       <% }else{%> 
+       <h4 style="color:#0099ff">Your sort list have <span class="badge"><%=count %></span> projects.</h4> 
+       <% } %>
+    </center></div>
+
+     <% if(errors.length>0){ %>
+<div  id="myAlert"  class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+
+
+ <%if(slp.length == 0){ %>   
+  <img src="/assets/images/splash.jpg" style="margin-left:50px">    
+ <% }%> 
+
+
+<div class="ptt">
+<div class="containor">
+ <div class="row">
+   <% for(var i=0; i<slp.length; i++){ %>
+  <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6" align="center" style="margin-top:30px;">
+    <div class="drive">
+      <a id="driveA" href="project2?id=<%= slp[i].slId %>">
+     <img src="/assets/images/folder.png" style="width:80%" /> 
+       </a>
+     <br>
+
+      <form method="post" action="/mySortList">
+      <input type="text" name="slId" value="<%= slp[i].slId %>" style="display:none" required>
+      <button type="submit">remove</button>
+      </form>
+    </div>
+    <b><%= slp[i].slTitle %></b>   
+  </div>
+     <% }%> 
+ </div>
+</div>
+</div>
+
+
+ 
+<br><br>
+
+
+<% include partials/minor_footer.ejs %>
+
+ <script>
+ $(document).ready(function(){
+        setTimeout(function(){
+        $('#myAlert').hide('fade');
+        }, 2000); });
+</script>
+
+</body>
+</html>

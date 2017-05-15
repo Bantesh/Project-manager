@@ -1,0 +1,30 @@
+body{
+    background: #0d1521;
+    font-family: tahoma;
+    color: #989898;
+}
+a{color: orange;}
+h1{color: green;}
+
+input[type="text"], input[type="email"], input[type="date"]{
+    width: 70%;
+    padding: 10px;
+    background:#181c22;
+    border: 0;
+    font-size: 15px;
+    color: #989898;
+}
+input{
+	margin-bottom: 20px;
+}
+
+button{
+    padding: 10px;
+    width: 30%;
+    background: #23282e;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}

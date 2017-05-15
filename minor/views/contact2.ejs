@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+ <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<% include partials/nav.ejs %>
+<h1>Hey! This is my contact page</h1>
+<p>This is quit simple and pretty cool.</p>
+<p>Welcome <%= qs.name %></p>
+
+ <form id="contact-form" method="POST" action="/contact">
+  <label for="who">Who do you want to contact?</label>  <br />
+  <input type="text" name="who" value="<%= qs.name %>"> <br />
+  <label for="age">What is your age?</label> <br />
+  <input type="text" name="age" value="<%= qs.age %>"> <br />
+  <label for="email">Your email</label> <br />
+  <input type="email" name="email" /> <br />
+  <input type="submit" value="submit" />
+ </form>
+
+</body>
+
+</html>

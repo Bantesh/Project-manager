@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>     
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+  <div class="fbsBackground">
+  <div class="fbs">
+    <h1>Contact US!</h1>
+   <h3>Thanks for getting in touch!</h3>
+   <% if(data.length !=0){ %>
+   <h4>You contacted <a href="/profile"><%= newData.who %></a>, Age: <%= newData.age %> </h4>
+   <h4>We will reply to you at <a href="/profile"><%= newData.contactEmail %></a></h4>
+    <% }else{ %>
+           <h4>You contacted <a href=""><%= newData.who %></a>, Age: <%= newData.age %> </h4>
+          <h4>We will reply to you at <a href=""><%= newData.contactEmail %></a></h4>
+    <% }%>
+  </div>
+  <div>
+
+<% include partials/minor_footer.ejs %>
+
+ 
+</body>
+</html>

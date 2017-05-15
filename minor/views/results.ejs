@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+   <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script>     
+</head>
+<body>
+        <% include partials/minor_header.ejs %> 
+
+
+
+   <% if(projects.length === 0){ %> 
+    <div class="addProject">
+     <center><h3>Oops! Search not found for <i style="color:#0099cc"><%= qs.q %></i></h3></center>
+   </div>
+   <div class="ptt"><center><img src="/assets/images/images.jpg"></center></div>
+    <%} else{%>
+    <div class="addProject">
+      <center><h3><i class="fa fa-search fa-fw"></i> Results for <i style="color:#0099cc"><%= qs.q %></i></h3></center>
+    </div>
+
+<div class="ptt">
+<div class="containor">
+ <div class="row">
+   <% for(var i=0; i<projects.length; i++){ %>
+  <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6" align="center" style="margin-top:30px;">
+     <a id="driveA" href="project1?id=<%= projects[i].pId %>">
+    <div class="drive">
+     <img src="/assets/images/folder.png" style="width:80%" />  <br>
+     <%= projects[i].pType %>
+    </div>
+     </a>
+    <b><%= projects[i].projectTitle %></b>   
+  </div>
+     <% }%>
+ </div>
+</div>
+</div>
+<br><br>
+       <% }%> 
+
+
+      <div class="fixed-sot">
+      <form method="get" action="/results1">
+      <input type="text" name="q" value="<%= qs.q %>" style="display:none" required>
+      <label>Sort By Technique</label>
+      <select name="sot" onchange='this.form.submit();'>
+      <option selected>Select</option> <option>Java</option> <option>C</option> <option>C++</option>
+      <option>Python</option> <option>Php</option> <option>Node js</option> <option>Flask</option>
+      </select>  <i class="fa fa-sort fa-2x"></i>
+      </form>
+    </div>
+    
+
+<% include partials/minor_footer.ejs %>
+ 
+</body>
+</html>

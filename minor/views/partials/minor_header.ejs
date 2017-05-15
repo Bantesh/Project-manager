@@ -1,0 +1,101 @@
+<nav class="navbar-inverse navbar-fixed-top">
+  <div class="head1">
+<div class="containor">
+<div class="row" id="ROW">
+<div class="col-lg-3">
+   <a href="/"><img src="/assets/images/project.png" style="width:40%;margin-top:-10px">
+   <img src="/assets/images/MANAGER.png" style="width:50%;margin-left:60px;margin-top:-10px">
+   </a> 
+</div>
+<div class="col-lg-5">
+   <div class="head11">
+    <form method="get" action="/results1">
+    <div id="smm" class="input-group">
+    <input id="smmm" class="form-control search" type="text" name="q" placeholder="Search for major, minor or mini" required />
+    <span class="input-group-btn">
+    <button type="submit" class="btn"><i class="fa fa-search fa-fw"></i></button> 
+    </span>
+    </div>
+  </form>
+    </div>
+</div>
+<div class="col-lg-4">
+<ul class="nav navbar-nav navbar-center" id="Nav">
+ <li><a href="/">HOME</a></li>
+      <% if(data.length !=0){ %>
+       <li><a href="add-project"><i class="fa fa-plus fa-fw"></i> ADD</a></li>
+      <li class="dropdown"><a href="#">
+    <i class="fa fa-user-secret fa-2x"></i> <span class="caret"></span>
+     </a>
+   <ul class="dropdown-menu">
+   <li><a href="/profile"><i class="fa fa-user" style="color:#ffb84d"></i> My Profile</a></li>
+   <li><a href="/networks"><i class="fa fa-life-ring fa-spin" style="color:#0099ff"></i> My Networks</a></li>
+    <li><a href="mySortList"><i class="fa fa-shopping-cart" style="color:#009933"></i> My sort List
+    <span class="badge" style="background-color:red;color:white">2</span></a></li>
+   <li><a href="logout"><i class="fa fa-sign-out" style="color:#ff0000"></i> Logout</a></li>
+   </ul>
+  </li>
+       <% } else { %>
+            <li><a href="login">LOGIN</a></li>
+      <% } %>
+      <li><a href="help">HELP</a></li>
+</ul>
+
+
+</div>
+</div>
+          <div class="fqs">
+            <i id="QSI" class="fa fa-search fa-2x"></i> 
+            <i style="display:none" id="qsd" class="fa fa-close fa-2x"></i>
+          </div>
+      <div id="qsi">
+      <input id="search" type="text" name="search_term" placeholder="Search for a project" />
+      </div>
+            <div id="searchResults">
+           <div class="containor">
+           <div class="row">
+
+          </div>
+          </div>
+          </div>
+</div>
+
+ 
+
+  <br clear="all" />
+
+  </div>
+ 
+</nav>
+
+
+
+ <script>
+$(document).ready(function(){
+    $("#smmm").focus(function(){
+        $("#smm").css("width","100%");
+        $("#smm").css("margin-left","0px");
+        $('.#smmm').focus();
+    });
+
+       $('#QSI').click(function(){
+        $("#qsi").css("display","block");
+        $("#qsd").css("display","block");
+        $("#QSI").css("display","none");
+        $("#ROW").css("display","none");
+        $('#search').focus();
+         $("#searchResults").fadeIn("slow");
+      });
+
+          $('#qsd').click(function(){
+        $("#qsi").css("display","none");
+        $("#qsd").css("display","none");
+        $("#QSI").css("display","block");
+        $("#ROW").css("display","block");
+        $("#searchResults").fadeOut("slow");
+      });
+
+});
+
+</script> 
+

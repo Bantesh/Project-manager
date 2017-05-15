@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+   <title>project Manager</title>
+    <link href="/assets/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/main_page.css" rel="stylesheet" type="text/css" /> 
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
+  
+    <link href="/assets/add-project.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/jquery.min.js"></script> 
+    <script src="/assets/bootstrap.min.js"></script> 
+    <script src="/assets/custom.js"></script> 
+   
+</head>
+<body>
+        <% include partials/minor_header.ejs %>
+
+<% if(errors.length>0){ %>
+<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <b><%= errors %></b>
+</div>
+<% } %>
+
+  <div class="fbsBackground">
+  <div class="fbs">
+   <form method="POST" action="/contact">
+  <% if(data.length != 0) {
+       for(var i=0; i<data.length; i++){ %>
+  <label for="who">Who do you want to contact?</label>  <br />
+  <input class="form-control" type="text" name="who" value="<%= data[i].Enrollment %>" placeholder="Your Enrollment"> <br>
+  <label for="age">What is your age?</label> <br />
+  <input class="form-control" type="text" name="age" placeholder="eg. 20"> <br />
+  <label for="email">Your email</label> <br />
+  <input class="form-control" type="email" name="contactEmail"  placeholder="example@gmail.com" /> <br />
+  <% } } else{ %>
+
+  <label for="who">Who do you want to contact?</label>  <br />
+  <input class="form-control" type="text" name="who" placeholder="Your Enrollment"> <br />
+  <label for="age">What is your age?</label> <br />
+  <input class="form-control" type="text" name="age" placeholder="eg. 20"> <br />
+  <label for="email">Your email</label> <br />
+  <input class="form-control" type="email" name="contactEmail" placeholder="example@gmail.com" /> <br />
+
+ <%  }%>
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+    
+  </div>
+  </div>
+
+<% include partials/minor_footer.ejs %>
+
+ 
+</body>
+</html>

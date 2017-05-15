@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+<head>
+	<title>
+		<% for(var i=0; i<users.length; i++){ %>
+         <%= users[i].name %>
+      <% } %>
+  </title>
+<link href="/assets/profile.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>Welcome to the profile of <%= qs.id %> </h1>
+ <ul>
+      <% for(var i=0; i<users.length; i++){ %>
+         <li>Name : <%= users[i].name %></li>
+         <li>Email : <%= users[i].email %></li>
+         <li>Mobile : <%= users[i].mob %></li>
+         <li>Projects : <%= users[i].nop %></li>
+      <% } %>
+    </ul>
+
+
+</body>
+
+</html>

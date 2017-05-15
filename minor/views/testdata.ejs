@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+   <title>Todo List</title>
+</head>
+<body>
+  <h1>Hey guys!!</h1>
+    <form  method="POST" action="/">
+      <input type="text" name="who" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+     <input type="text" name="age" placeholder="Age" required />
+       <button type="submit">SEND</button>
+    </form>
+     <ul>
+      <% for(var i=0; i<mools.length; i++){ %>
+         <li><%= mools[i].who %></li>
+      <% } %>
+    </ul>  
+ 
+</body>
+</html>

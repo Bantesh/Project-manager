@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+     
+</head>
+<body> 
+
+   <br/><br/>
+
+   <% if(projects.length === 0){ %> 
+     <h3>Search not found</h3>
+    <%} else{%>
+        <h3>Results for <%= query %></h3>
+        <div>
+          <% for(var i=0; i<projects.length; i++){ %>
+          <h4><%= projects[i]._source.pType %></h4>
+           <h4><%= projects[i]._source.projectTitle %></h4>
+            <h4><%= projects[i]._source.attachFile %></h4>
+          <% }%>
+        </div>
+    <% }%>
+    
+
+ 
+</body>
+</html>

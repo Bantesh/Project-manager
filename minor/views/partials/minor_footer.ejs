@@ -1,0 +1,70 @@
+<nav>
+     <link href="/assets/help.css" rel="stylesheet" type="text/css" /> 
+      <script src="/assets/bootstrap.min.js"></script>
+      <script src="/assets/jquery.min.js"></script>
+
+
+<div class="footer">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-4">
+  <p class="uql"><b>Quick Links</b></p> 
+   <a href="/about">about us</a> <br>
+   <a href="/contact">contact us</a> <br>
+   <a href="">join us</a>
+  </div>
+  <div class="col-lg-4">
+    <center><p class="cr"><i class="fa fa-copyright fa-fw"></i>projectManager.com 2017</p></center>
+  </div>
+   <div class="col-lg-4">
+
+  </div>
+  </div>
+  </div>
+</div>
+
+<div class="CMPS">
+<div class="WHead">
+<span style="margin-left:20px;"><b>Your feedback</b></span>
+<i class="fa fa-minus fa-fw" id="i1" style="margin-left:170px;"></i>
+<i class="fa fa-plus fa-fw" id="i2"></i>
+<i class="fa fa-remove fa-fw" id="i3"></i>
+</div>
+<div class="Wbody" id="panel">
+ <% if(data.length !=0){ %>
+        <form method="post" action="/feedback"> 
+        <input type="text" name="fromEnrollment" value="<%= data.Enrollment %>" placeholder="Enrollment" 
+        style="display:none" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea rows="15" name="feedback" cols="20" placeholder="Write a feedback..." required></textarea>
+        <div class="WBase">
+        <button type="submit" class="btn Wbtn">Send</button>
+        </div>
+          </form>
+  <% } else { %>
+           <p style="margin-left:10px">You need to <a href="/login">Login</a> first!</p> 
+      <% } %>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+   
+    $("#panel").hide();
+
+    $("#i1").click(function(){
+        $("#panel").hide(1000);
+    });
+    $("#i2").click(function(){
+        $("#panel").show(1000);
+    });
+    $("#i3").click(function(){
+        $(".CMPS").hide("slow");
+    });
+   $("#i4").click(function(){
+        $(".CMPS").show("slow");
+    });
+});
+</script>
+
+</nav>
